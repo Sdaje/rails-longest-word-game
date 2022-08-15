@@ -27,7 +27,7 @@ class GamesController < ApplicationController
               elsif answer == []
                 "No answer !"
               else
-                "Congratulations"
+                "Congratulations, your score is #{dictionnary['length'] * dictionnary['length']}"
               end
   end
 end
