@@ -1,0 +1,13 @@
+<h1>New game</h1>
+<ul class="list-group list-group-horizontal">
+<% @letters.each do |letter| %>
+  <li class="list-group-item ms-3 list-group-item-warning border px-3 shadow mb-5 rounded"><%= letter %></li>
+<% end %>
+</ul>
+<form action="/score" method="POST" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="answer">Type your answer:</label>
+  <input type="text" name="answer">
+  <input id ="letters" name="letters" type="hidden" value= "<%=@letters%>" />
+  <input type="submit" value="Answer!" class="btn btn-warning mb-3">
+</form>
